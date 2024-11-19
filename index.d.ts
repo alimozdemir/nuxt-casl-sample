@@ -1,12 +1,15 @@
 import type { AppAbility, Permission } from './types/permissions/ability'
 
-declare module 'nuxt/app' {
+// Known issue: https://github.com/nuxt/nuxt/discussions/19949
+declare module '#app' {
     interface PageMeta {
         permission?: Permission,
     }
+}
 
+declare module 'vue-router' {
     interface RouteMeta {
-        permission?: Permission,
+        permission?: Permission
     }
 }
 
